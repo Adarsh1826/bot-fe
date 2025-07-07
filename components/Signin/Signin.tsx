@@ -34,7 +34,8 @@ export const Signin = ({
 
         {/* Bottom Actions */}
         <div className="mt-6 text-center text-sm text-gray-600">
-          Don't have an account?
+          <p>Don&#39;t forget to sign in</p>
+
           <button
             onClick={() => alert("Redirect to Sign Up page")}
             className="text-blue-600 hover:underline ml-1"

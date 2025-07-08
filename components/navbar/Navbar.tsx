@@ -52,7 +52,7 @@ export const Navbar = () => {
                   className="flex items-center gap-2"
                 >
                   <FaGithub className="w-4 h-4" />
-                  GitHub
+                  
                 </a>
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => router.push('/signin')}>

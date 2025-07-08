@@ -1,16 +1,14 @@
 'use client'
-import { useState } from "react";
 import { LuPlaneTakeoff } from "react-icons/lu";
 import { FaGithub } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
-import { Signin } from "@/components/Signin/Signin"
+import { useRouter } from "next/navigation";
 export const Navbar = () => {
-  const [showForm, setShowForm] = useState(false);
-
+  const router = useRouter();
   return (
     <>
       {/* Blur background when modal is open */}
-      <div className={`${showForm ? "blur-sm pointer-events-none select-none" : ""}`}>
+      <div className="">
         <div className="flex justify-between items-center p-2">
           <div><LuPlaneTakeoff className="w-6 h-6" /></div>
           <div className="flex items-center gap-x-5">
@@ -21,13 +19,12 @@ export const Navbar = () => {
             >
               <FaGithub className="w-6 h-6" />
             </a>
-            <Button onClick={() => setShowForm(true)} className="bg-red-100">
+            <Button onClick={() => router.push('/signin')}>
               Try it Now!
             </Button>
           </div>
         </div>
       </div>
-      <Signin showForm={showForm} setShowForm={setShowForm}/>
     </>
   );
 };

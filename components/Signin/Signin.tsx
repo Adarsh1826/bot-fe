@@ -1,16 +1,11 @@
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { FcGoogle } from "react-icons/fc"; 
+import { signIn } from "next-auth/react"; 
+import { useRouter } from "next/navigation";
 
-export const Signin = ({
-  showForm,
-  setShowForm,
-}: {
-  showForm: boolean;
-  setShowForm: (value: boolean) => void;
-}) => {
-  if (!showForm) return null;
-
+export const Signin = ()=>{
+  const router = useRouter()
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
@@ -27,7 +22,9 @@ export const Signin = ({
         </div>
 
         {/* Google Login */}
-        <Button variant="outline" className="w-full flex items-center justify-center gap-2">
+        <Button variant="outline" className="w-full flex items-center justify-center gap-2"
+          onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+        >
           <FcGoogle className="w-5 h-5" />
           <span>Sign in with Google</span>
         </Button>
@@ -47,7 +44,9 @@ export const Signin = ({
         <div className="mt-2 text-center">
           <Button
             variant="ghost"
-            onClick={() => setShowForm(false)}
+            onClick={()=>{
+              router.push('/navbar')
+            }}
             className="text-gray-500"
           >
             Close

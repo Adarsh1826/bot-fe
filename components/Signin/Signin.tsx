@@ -23,7 +23,7 @@ export const Signin = ()=>{
 
         {/* Google Login */}
         <Button variant="outline" className="w-full flex items-center justify-center gap-2"
-          onClick={() => signIn("google", { callbackUrl: "/navbar" })}
+          onClick={() => signIn("google", { callbackUrl: "/" })}
         >
           <FcGoogle className="w-5 h-5" />
           <span>Sign in with Google</span>
@@ -45,7 +45,7 @@ export const Signin = ()=>{
           <Button
             variant="ghost"
             onClick={()=>{
-              router.push('/navbar')
+              router.push('/')
             }}
             className="text-gray-500"
           >

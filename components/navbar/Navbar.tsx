@@ -10,15 +10,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useRouter } from "next/navigation";
 import { Menu } from "lucide-react";
-import { useSession } from "next-auth/react";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 export const Navbar = () => {
   const router = useRouter();
-  const { data } = useSession()
-
-
   return (
-    <div className="p-2">
+    <div className="p-2 bg-black text-white">
       <div className="flex justify-between items-center">
         {/* Logo */}
         <div>
@@ -32,20 +27,16 @@ export const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaGithub className="w-6 h-6" />
+            <FaGithub className="w-6 h-6 text-white"  />
           </a>
-          {
-            data ? (
-              <Avatar>
-                <AvatarImage src={data?.user?.image ??undefined} />
-                <AvatarFallback>{data?.user?.name?.[0] ?? "U"}</AvatarFallback>
-              </Avatar>
-            ) : (
-              <Button onClick={() => router.push('/signin')}>
-                Try it Now!
-              </Button>
-            )
-          }
+          <Button
+            className="bg-amber-600 text-white px-6 py-3 rounded-lg hover:bg-amber-700 transition"
+            onClick={() => {
+              router.push('/signin')
+            }}
+          >
+            🚀 Get Started
+          </Button>
 
         </div>
 
@@ -65,8 +56,8 @@ export const Navbar = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
                 >
-                  <FaGithub className="w-4 h-4" />
-                  
+                  <FaGithub className="w-4 h-4 text-[#f5f5f5]" />
+
                 </a>
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => router.push('/signin')}>

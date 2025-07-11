@@ -61,7 +61,14 @@ export const Navbar = () => {
                 </a>
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => router.push('/signin')}>
-                Try it Now!
+                <Button
+            className="bg-amber-600 text-white px-6 py-3 rounded-lg hover:bg-amber-700 transition"
+            onClick={() => {
+              router.push('/signin')
+            }}
+          >
+            🚀 Get Started
+          </Button>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

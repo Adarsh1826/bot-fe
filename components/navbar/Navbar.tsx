@@ -10,8 +10,12 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useRouter } from "next/navigation";
 import { Menu } from "lucide-react";
+import { useSession } from "next-auth/react";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 export const Navbar = () => {
   const router = useRouter();
+  const { data } = useSession()
+
 
   return (
     <div className="p-2">
@@ -30,9 +34,19 @@ export const Navbar = () => {
           >
             <FaGithub className="w-6 h-6" />
           </a>
-          <Button onClick={() => router.push('/signin')}>
-            Try it Now!
-          </Button>
+          {
+            data ? (
+              <Avatar>
+                <AvatarImage src={data?.user?.image ??undefined} />
+                <AvatarFallback>{data?.user?.name?.[0] ?? "U"}</AvatarFallback>
+              </Avatar>
+            ) : (
+              <Button onClick={() => router.push('/signin')}>
+                Try it Now!
+              </Button>
+            )
+          }
+
         </div>
 
         {/* Mobile dropdown */}

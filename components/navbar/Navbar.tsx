@@ -44,7 +44,7 @@ export const Navbar = ({ type }: {
         ) : null}
 
         {/* Mobile dropdown */}
-        <div className="md:hidden">
+        {/* <div className="md:hidden">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="icon">
@@ -75,7 +75,7 @@ export const Navbar = ({ type }: {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-        </div>
+        </div> */}
         {type === "login" && (
           // Mobile dropdown
           <div className="md:hidden">
@@ -107,3 +107,5 @@ export const Navbar = ({ type }: {
     </div>
   );
 };
+
+

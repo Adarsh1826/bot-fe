@@ -4,7 +4,6 @@ import {  FaSignOutAlt } from "react-icons/fa";
 import {  signOut } from "next-auth/react";
 import { Button } from "../ui/button";
 import { useState } from "react";
-import { CodeforcesLink } from "../links/CodeforcesLinker";
 export const SideNav = ({ type }: { type: string }) => {
     if (type !== "dashboard") return null;
     return (

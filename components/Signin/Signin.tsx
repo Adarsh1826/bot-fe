@@ -23,7 +23,7 @@ export const Signin = ()=>{
 
         {/* Google Login */}
         <Button variant="outline" className="w-full flex items-center justify-center gap-2"
-          onClick={() => signIn("google", { callbackUrl: "/" })}
+          onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
         >
           <FcGoogle className="w-5 h-5" />
           <span>Sign in with Google</span>

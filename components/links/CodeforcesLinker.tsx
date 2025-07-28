@@ -20,9 +20,9 @@ export const CodeforcesLink = ({ onClose }: { onClose: () => void }) => {
             });
             console.log("User linked:", res.data.result[0]);
             setSuccess(true);
-            setTimeout(onClose, 1500); 
+            setTimeout(onClose, 1500);
         } catch (err) {
-            console.error("Invalid handle or network error ",err);
+            console.error("Invalid handle or network error ", err);
         } finally {
             setLoading(false);
         }
@@ -62,13 +62,18 @@ export const CodeforcesLink = ({ onClose }: { onClose: () => void }) => {
                             onChange={(e) => setHandle(e.target.value)}
                             className="rounded-xl border-gray-300 focus:border-[#ff623f] focus:ring-[#ff623f]/20"
                         />
-                        <Button
-                            onClick={handleSubmit}
-                            disabled={loading}
-                            className="w-full rounded-xl"
-                        >
-                            {loading ? "Linking..." : "Submit"}
-                        </Button>
+                        <div className="flex justify-between">
+                            <Button onClick={onClose}  variant="destructive">
+                                Close
+                            </Button>
+                            <Button
+                                onClick={handleSubmit}
+                                disabled={loading}
+                            >
+                                {loading ? "Linking..." : "Submit"}
+                            </Button>
+
+                        </div>
                     </>
                 )}
             </motion.div>

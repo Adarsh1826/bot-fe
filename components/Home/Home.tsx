@@ -1,23 +1,8 @@
 'use client';
-import { useSession } from "next-auth/react";
-import { Navbar } from "../navbar/Navbar";
+import { Navbar } from "../navbar/TopNavBar/Navbar";
 import { BackgroundLines } from "../ui/background-lines";
-import { SideNav } from "../dashboard/Sidenav";
 
 export const LandingContent = () => {
-  const { data: session } = useSession();
-  const type = session ? "dashboard" : "login";
-
- 
-  if (type === "dashboard") {
-    return (
-      <div className="h-screen w-full bg-black text-white">
-        <SideNav type="dashboard" />
-      </div>
-    );
-  }
-
-  
   return (
     <div className="relative h-screen w-full bg-black text-white overflow-hidden">
       <BackgroundLines>

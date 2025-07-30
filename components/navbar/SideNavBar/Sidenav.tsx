@@ -5,6 +5,9 @@ import { signOut } from "next-auth/react";
 import { Button } from "../../ui/button";
 import { useState } from "react";
 import { CodeforcesLink } from "../../links/CodeforcesLinker";
+import Image from "next/image";
+
+
 export const SideNav = ({ type }: { type: string }) => {
     if (type !== "dashboard") return null;
     return (
@@ -39,7 +42,7 @@ const NavContent = () => {
                                 }`}
                         >
                             <div className="min-w-[24px] min-h-[24px] flex items-center justify-center">
-                                <img
+                                <Image
                                     src="/icons/code-forces.svg"
                                     alt="Codeforces"
                                     className="w-6 h-6 object-contain"

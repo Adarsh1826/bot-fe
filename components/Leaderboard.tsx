@@ -3,7 +3,7 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { leaderboardData } from "@/data/LeaderboardData";
+import { leaderboardData } from "@/data/leaderboardData";
 import { Trophy } from "lucide-react";
 
 export default function Leaderboard() {

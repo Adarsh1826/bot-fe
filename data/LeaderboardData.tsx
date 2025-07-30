@@ -1,5 +1,3 @@
-// data/leaderboardData.ts
-
 export const leaderboardData = [
   { name: 'Shubham', score: 950 },
   { name: 'Adarsh', score: 870 },

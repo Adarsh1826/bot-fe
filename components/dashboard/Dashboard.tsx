@@ -2,6 +2,7 @@
 import { useSession } from "next-auth/react";
 import { SideNav } from "../navbar/SideNavBar/Sidenav";
 import { useSidebar } from "@/components/ui/sidebar"; 
+import Link from "next/link";
 
 export const Dashboard = () => {
   const { data: session } = useSession();
@@ -23,10 +24,12 @@ export const Dashboard = () => {
         <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div className="bg-gray-800 rounded-xl p-4 shadow">
-            <h2 className="text-lg font-semibold">Top Performers</h2>
-            <p>Details here...</p>
-          </div>
+          <Link href="/leaderboard" className="block">
+            <div className="bg-gray-800 rounded-xl p-4 shadow">
+              <h2 className="text-lg font-semibold">Top Performers</h2>
+              <p>Details here...</p>
+            </div>
+          </Link>
           <div className="bg-gray-800 rounded-xl p-4 shadow">
             <h2 className="text-lg font-semibold">Recent Activity</h2>
             <p>Details here...</p>

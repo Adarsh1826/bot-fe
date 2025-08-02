@@ -2,7 +2,6 @@
 import { useSession } from "next-auth/react";
 import { SideNav } from "../navbar/SideNavBar/Sidenav";
 import { useSidebar } from "@/components/ui/sidebar";
-import Leaderboard from "../boards/Leaderboard";
 import { setLeaderBoardOpen } from "@/store/slices/boardSlice";
 import { RootState } from "@/store";
 import { useDispatch } from "react-redux"
@@ -15,7 +14,7 @@ export const Dashboard = () => {
   const { open } = useSidebar();
   const dispatch = useDispatch();
   const isLeaderBoardOpen = useSelector((state: RootState) => state.board.isLeaderBoardOpen)
-  const months: string[] = [
+  const months = [
     "Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
   ];
@@ -67,7 +66,6 @@ export const Dashboard = () => {
                   <X />
                 </button>
               </div>
-
               <ContributionCard month={months} />
             </div>
           </div>

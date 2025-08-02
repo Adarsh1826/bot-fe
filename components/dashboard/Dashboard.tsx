@@ -5,16 +5,20 @@ import { useSidebar } from "@/components/ui/sidebar";
 import Leaderboard from "../boards/Leaderboard";
 import { setLeaderBoardOpen } from "@/store/slices/boardSlice";
 import { RootState } from "@/store";
-import {useDispatch} from "react-redux"
+import { useDispatch } from "react-redux"
 import { useSelector } from "react-redux";
 import { X } from "lucide-react";
+import ContributionCard from "../boards/ContributionCard";
 export const Dashboard = () => {
   const { data: session } = useSession();
   const type = session ? "dashboard" : "login";
   const { open } = useSidebar();
   const dispatch = useDispatch();
-  const isLeaderBoardOpen = useSelector((state:RootState)=>state.board.isLeaderBoardOpen)
-
+  const isLeaderBoardOpen = useSelector((state: RootState) => state.board.isLeaderBoardOpen)
+  const months: string[] = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+  ];
   return (
     <div className="h-screen w-full bg-black text-white flex transition-all duration-300 ease-in-out">
       {/* Sidebar */}
@@ -55,15 +59,16 @@ export const Dashboard = () => {
           <div className="flex justify-start mt-6">
             <div className="w-full max-w-5xl bg-gray-800 p-6 rounded-xl shadow">
               <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-bold">ContributionCard</h2>
+
                 <button
-                 onClick={() => dispatch(setLeaderBoardOpen())}
+                  onClick={() => dispatch(setLeaderBoardOpen())}
                   className="text-white text-lg px-2 rounded hover:bg-gray-700"
                 >
-                 <X/>
+                  <X />
                 </button>
               </div>
-              <Leaderboard />
+
+              <ContributionCard month={months} />
             </div>
           </div>
         )}

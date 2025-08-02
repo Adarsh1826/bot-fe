@@ -33,8 +33,8 @@ const getColor = (level: number): string => {
   }
 };
 
-const ContributionCard: React.FC<ContributionCardProps> = ({ month }:any) => {
-  const currentMonthIndex = months.indexOf(month);
+const ContributionCard: React.FC<ContributionCardProps> = ({ month }:ContributionCardProps) => {
+  const currentMonthIndex = months.indexOf(month[0]);
   const daysInMonth: number = getDaysInMonth(currentMonthIndex);
   const data: number[] = generateMonthData(daysInMonth);
 

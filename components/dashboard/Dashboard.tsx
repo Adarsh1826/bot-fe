@@ -44,7 +44,8 @@ export const Dashboard = () => {
           </div>
 
           <div className="bg-gray-800 rounded-xl p-4 shadow">
-            <h2 className="text-lg font-semibold">Statistics</h2>
+            <h2 className="text-lg font-semibold"
+            >Statistics</h2>
             {/* <p>More info...</p> */}
           </div>
         </div>
@@ -54,7 +55,7 @@ export const Dashboard = () => {
           <div className="flex justify-start mt-6">
             <div className="w-full max-w-5xl bg-gray-800 p-6 rounded-xl shadow">
               <div className="flex justify-between items-center mb-4">
-                <h2 className="text-xl font-bold">Leaderboard</h2>
+                <h2 className="text-xl font-bold">ContributionCard</h2>
                 <button
                  onClick={() => dispatch(setLeaderBoardOpen())}
                   className="text-white text-lg px-2 rounded hover:bg-gray-700"

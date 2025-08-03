@@ -41,10 +41,16 @@ const monthLabels: MonthLabel[] = [
   { name: "Dec", week: 48 },
 ];
 
-const ContributionGrid: React.FC = () => {
+// ✅ Add props type here
+type ContributionGridProps = {
+  isGridOpen: boolean;
+};
+
+const ContributionGrid: React.FC<ContributionGridProps> = ({ isGridOpen }) => {
+  if (!isGridOpen) return null; // Optional: conditionally render
+
   const data: number[] = generateYearData();
 
-  // Break into weekly arrays
   const weeks: number[][] = [];
   for (let i = 0; i < totalDays; i += 7) {
     weeks.push(data.slice(i, i + 7));

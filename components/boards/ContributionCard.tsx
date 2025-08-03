@@ -13,7 +13,7 @@ interface ContributionCardProps {
 }
 
 const getDaysInMonth = (monthIndex: number): number => {
-  const daysPerMonth: number[] = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  const daysPerMonth: number[] = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   return daysPerMonth[monthIndex];
 };
 

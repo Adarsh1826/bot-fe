@@ -40,8 +40,12 @@ const monthLabels: MonthLabel[] = [
   { name: "Nov", week: 44 },
   { name: "Dec", week: 48 },
 ];
+interface Props {
+  isGridOpen:boolean,
+  setGridOpen?:React.Dispatch<React.SetStateAction<boolean>>
+}
 
-const ContributionGrid: React.FC = () => {
+const ContributionGrid = ({isGridOpen}:Props) => {
   const data: number[] = generateYearData();
 
   // Break into weekly arrays
@@ -51,6 +55,8 @@ const ContributionGrid: React.FC = () => {
   }
 
   const currentYear: number = new Date().getFullYear();
+
+  if(!isGridOpen) return null
 
   return (
     <div className="h-screen w-full bg-black flex justify-center items-center text-white px-4">

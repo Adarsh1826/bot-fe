@@ -34,7 +34,9 @@ export const Signin = ()=>{
           <p>Don&#39;t forget to sign in</p>
 
           <button
-            onClick={() => alert("Redirect to Sign Up page")}
+            onClick={()=>{
+              router.push('/signup')
+            }}
             className="text-blue-600 hover:underline ml-1"
           >
             Sign Up

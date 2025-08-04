@@ -53,8 +53,8 @@ export const Dashboard = () => {
         {/* Conditional Rendering */}
         {activeSection === "leaderboard" && (
           <div className="flex justify-start mt-6">
-            <div className="w-full max-w-5xl bg-gray-800 p-6 rounded-xl shadow">
-              <div className="flex justify-between items-center mb-4">
+            <div className="w-full max-w-8xl bg-gray-800 p-6 rounded-xl shadow">
+              <div className="flex justify-between items-center mb-2">
                 <button
                   onClick={() => setActiveSection(null)}
                   className="text-white text-lg px-2 rounded hover:bg-gray-700"

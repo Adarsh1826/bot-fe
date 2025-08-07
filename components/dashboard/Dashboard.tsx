@@ -4,8 +4,9 @@ import { SideNav } from "../navbar/SideNavBar/Sidenav";
 import { useSidebar } from "@/components/ui/sidebar";
 import { X } from "lucide-react";
 import { useState } from "react";
-import ContributionGrid from "../boards/ContributionGrid";
-import Leaderboard from "../boards/Leaderboard";
+//import ContributionGrid from "../boards/ContributionGrid";
+//import Leaderboard from "../boards/Leaderboard";
+import ComingSoon from "../boards/ComingSoon";
 
 export const Dashboard = () => {
   const { data: session } = useSession();
@@ -51,7 +52,7 @@ export const Dashboard = () => {
         </div>
 
         {/* Conditional Rendering */}
-        {activeSection === "leaderboard" && (
+        {/* {activeSection === "leaderboard" && (
           <div className="flex justify-start mt-6">
             <div className="w-full max-w-8xl bg-gray-800 p-6 rounded-xl shadow">
               <div className="flex justify-between items-center mb-2">
@@ -65,9 +66,26 @@ export const Dashboard = () => {
               <Leaderboard />
             </div>
           </div>
+        )} */}
+
+        {activeSection === "leaderboard" && (
+          <div className="flex justify-start mt-6">
+            <div className="w-full max-w-8xl bg-gray-800 p-6 rounded-xl shadow">
+            <div className="flex justify-between items-center mb-2">
+            <button
+            onClick={() => setActiveSection(null)}
+            className="text-white text-lg px-2 rounded hover:bg-gray-700"
+            >
+            <X />
+            </button>
+            </div>
+            <ComingSoon />
+            </div>
+          </div>
         )}
 
-        {activeSection === "grid" && (
+
+        {/* {activeSection === "grid" && (
           <div className="flex justify-start mt-6">
             <div className="w-full max-w-8xl bg-gray-800 p-6 rounded-xl shadow">
               <div className="flex justify-between items-center mb-2">
@@ -81,8 +99,23 @@ export const Dashboard = () => {
               <ContributionGrid isGridOpen />
             </div>
           </div>
-        )}
+        )} */}
+        {activeSection === "grid" && (
+          <div className="flex justify-start mt-6">
+            <div className="w-full max-w-8xl bg-gray-800 p-6 rounded-xl shadow">
+              <div className="flex justify-between items-center mb-2">
+              <button
+              onClick={() => setActiveSection(null)}
+              className="text-white text-lg px-2 rounded hover:bg-gray-700"
+              >
+                <X />
+              </button>
+            </div>
+          <ComingSoon />
+        </div>
       </div>
+      )}
+      </div>  
     </div>
   );
 };
